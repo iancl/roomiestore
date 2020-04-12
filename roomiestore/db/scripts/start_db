@@ -3,7 +3,7 @@
 # this is meant to be used to create local dev postgres environment in local machine
 # sudo may not be necessary in mac os
 
-sudo docker create volume
+sudo docker volume create roomiestore_db
 
 sudo docker run -d \
 	--name roomiestore_db \
