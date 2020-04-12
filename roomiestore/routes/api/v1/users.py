@@ -1,12 +1,13 @@
 import json
-
-from roomiestore.controllers.users import UserController
 from flask import Response, request
+from roomiestore.routes.api.v1.base import RouterBase
+# for typing purposes
+from roomiestore.controllers.users import UserController
 
 
-class UserRoutes:
+class UserRoutes(RouterBase):
     def __init__(self, controller, logger):
-        self._controller:UserController = controller
+        self._controller: UserController = controller
         self._logger = logger
 
     def mount(self, app):
@@ -14,7 +15,6 @@ class UserRoutes:
 
     def get_user(self):
         r = self._controller.get_user_by_id(1)
-        return Response(json.dumps(r),
-                        mimetype='application/json',
-                        status=200)
+        return self.respond_success([r])
+
 
