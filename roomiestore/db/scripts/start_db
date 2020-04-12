@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# this is meant to be used to create local dev postgres environment in local machine
+# sudo may not be necessary in mac os
+
+sudo docker create volume
+
+sudo docker run -d \
+	--name roomiestore_db \
+	-e POSTGRES_PASSWORD=123Queso \
+	-e PGDATA=/data \
+	-v roomiestore_db:/data \
+	-p 54320:5432 \
+	postgres:10
