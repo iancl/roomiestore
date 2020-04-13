@@ -1,4 +1,4 @@
-from roomiestore.config.constants import STATUS_SUCCESS
+from roomiestore.config.constants import STATUS_SUCCESS, STATUS_NOT_FOUND, STATUS_BAD_REQUEST
 
 
 class ResponseBuilder:
@@ -12,12 +12,24 @@ class ResponseBuilder:
         return model
 
     @staticmethod
-    def not_found(message):
-        pass
+    def not_found(message='resource not found'):
+        model = ResponseBuilder.get_response_model()
+        model['status'] = STATUS_NOT_FOUND
+        model['message'] = message
+        del model['data']
+        del model['count']
+
+        return model
 
     @staticmethod
-    def bad_request(message):
-        pass
+    def bad_request(message='bad request'):
+        model = ResponseBuilder.get_response_model()
+        model['status'] = STATUS_BAD_REQUEST
+        model['message'] = message
+        del model['data']
+        del model['count']
+
+        return model
 
     @staticmethod
     def get_response_model():

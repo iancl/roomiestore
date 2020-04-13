@@ -1,5 +1,4 @@
-import json
-from flask import Response, request
+from flask import request
 from roomiestore.routes.api.v1.base import RouterBase
 # for typing purposes
 from roomiestore.controllers.users import UserController
