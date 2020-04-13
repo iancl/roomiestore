@@ -5,9 +5,9 @@ from roomiestore.controllers.users import UserController
 
 
 class UserRoutes(RouterBase):
-    def __init__(self, controller, logger):
+    def __init__(self, controller, response_builder, logger):
+        super().__init__(response_builder, logger)
         self._controller: UserController = controller
-        self._logger = logger
 
     def mount(self, app):
         app.add_url_rule('/api/v1/users', methods=['GET'], view_func=self.get_user)
