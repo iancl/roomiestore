@@ -12,4 +12,5 @@ env
 ehthumbs.db
 Thumbs.db
 .idea
-.log
+log.log
+
