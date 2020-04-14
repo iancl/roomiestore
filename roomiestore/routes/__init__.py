@@ -1,4 +1,4 @@
-from roomiestore.routes.api.v1 import API
+from .api.v1 import API
 
 class Router:
     def __init__(self, controllers, response_builder, logger):

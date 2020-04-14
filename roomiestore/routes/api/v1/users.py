@@ -1,5 +1,4 @@
-from flask import request
-from roomiestore.routes.api.v1.base import RouterBase
+from .base import RouterBase
 # for typing purposes
 from roomiestore.controllers.users import UserController
 

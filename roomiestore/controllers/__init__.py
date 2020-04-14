@@ -1,4 +1,4 @@
-from roomiestore.controllers.users import UserController
+from .users import UserController
 
 
 class Controller:

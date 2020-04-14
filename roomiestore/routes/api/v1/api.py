@@ -1,5 +1,5 @@
-from roomiestore.routes.api.v1 import UserRoutes
-from roomiestore.routes.api.v1.base import RouterBase
+from . import UserRoutes
+from . import RouterBase
 from roomiestore.config.constants import STATUS_NOT_FOUND, STATUS_ERROR
 from flask import Flask
 
