@@ -1,4 +1,6 @@
-from roomiestore.config.constants import STATUS_SUCCESS, STATUS_NOT_FOUND, STATUS_ERROR, STATUS_BAD_REQUEST, MIME_JSON
+from roomiestore.config.constants import STATUS_SUCCESS, STATUS_NOT_FOUND, STATUS_ERROR, STATUS_BAD_REQUEST, \
+    MIME_JSON, MIME_TEXT
+
 from flask import Response
 import json
 
@@ -28,3 +30,8 @@ class RouterBase:
     def respond_bad_request(self, message):
         model = self._response_builder.bad_request(message)
         return Response(json.dumps(model), mimetype=MIME_JSON, status=STATUS_BAD_REQUEST)
+
+    @staticmethod
+    def respond_health_check():
+        return Response(mimetype=MIME_TEXT, status=STATUS_SUCCESS)
+

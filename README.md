@@ -10,4 +10,10 @@ add app.py for prod
 add router for api
 add controllers base
 add response builder
-ADD BASE UNIT TESTS
+add BASE UNIT TESTS
+
+# phase 2
+add basic user crud options for users
+implement jwt token auth
+update/add unit tests
+add relevant logs
