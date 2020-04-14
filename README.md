@@ -1,3 +1,3 @@
 # Roomiestore
 
-An app where roommates can sell alcohol to other roommates
+An app where roommates can sell beverages to other roommates
