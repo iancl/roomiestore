@@ -1,7 +1,7 @@
 import pytest
 from roomiestore.routes.api.v1 import UserRoutes
 from roomiestore.controllers.users import UserController
-from roomiestore.tests.mocks.app_mock import AppMock
+from .mocks.app_mock import AppMock
 from roomiestore.utils.response_builder import ResponseBuilder
 
 

@@ -1,5 +1,5 @@
 from roomiestore.controllers import UserController
-from roomiestore.tests.mocks.logger_mock import LoggerMock
+from .mocks.logger_mock import LoggerMock
 
 
 def test_get_users(mocker):
