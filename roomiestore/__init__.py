@@ -19,17 +19,27 @@ class Application:
         self._controllers = Controller(self._logger, self._db)
         self._router = Router(self._controllers, self._response_builder, self._logger)
 
-
+        # initializing all tables
         self._db.create_entities()
 
         # test
-        from .models import Role
-
+        import datetime
+        from .models import User
         try:
-            res = self._db.query(Role).filter_by(role_id='4').first()
-            self._logger.error(res)
-        except IntegrityError as e:
-            self._logger.error(e)
+            # self._controllers.user().add(
+            #     fname='ian',
+            #     lname='calderon',
+            #     dob=datetime.datetime.strptime('03-29-1984', '%m-%d-%Y'),
+            #     email='calderon.ian@gmail.com',
+            #     phone=None,
+            #     username='icalderon',
+            #     passwd='123',
+            #     role_id=1)
+
+            r = self._db.query(User).filter_by(role_id=1).all()
+            self._logger.error(r)
+        except Exception as e:
+            self._logger.error('===================>', e)
 
 
     def setup_logging(self):

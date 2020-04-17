@@ -4,6 +4,7 @@ from .role import RoleController
 from ..models import Role as RoleModel
 from ..models import User as UserModel
 
+
 class Controller:
     def __init__(self, logger, db):
         self._logger = logger
@@ -11,7 +12,9 @@ class Controller:
         self._user = UserController(logger, db, UserModel)
         self._role = RoleController(logger, db, RoleModel)
 
-    @property
     def user(self):
         return self._user
+
+    def role(self):
+        return self._role
 

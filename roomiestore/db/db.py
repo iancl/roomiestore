@@ -7,8 +7,10 @@ Base = declarative_base()
 
 class DB:
     def __init__(self, config, logger):
+        debugMode = True if config['debug'] == 'True' else False
         self._engine = create_engine(
-            f'postgresql://{config["user"]}:{config["pass"]}@{config["host"]}:{config["port"]}/{config["db"]}')
+            f'postgresql://{config["user"]}:{config["pass"]}@{config["host"]}:{config["port"]}/{config["db"]}',
+            echo=debugMode)
         self._connection = self._engine.connect()
         self._logger = logger
         DBSession = sessionmaker(bind=self._engine)
