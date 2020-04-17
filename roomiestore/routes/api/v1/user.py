@@ -1,6 +1,6 @@
 from .base import RouterBase
 # for typing purposes
-from roomiestore.controllers.users import UserController
+from roomiestore.controllers.user import UserController
 
 
 class UserRoutes(RouterBase):

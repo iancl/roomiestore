@@ -7,7 +7,7 @@
 CREATE TABLE "role"
 (
  "role_id"     smallserial NOT NULL,
- "name"        varchar(50) NOT NULL,
+ "name"        varchar(50) NOT NULL UNIQUE,
  "description" text NOT NULL,
  CONSTRAINT "PK_roles" PRIMARY KEY ( "role_id" )
 );

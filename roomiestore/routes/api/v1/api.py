@@ -8,7 +8,7 @@ class API(RouterBase):
     def __init__(self, controllers, response_builder, logger):
         super().__init__(response_builder, logger)
         self._controllers = controllers
-        self._users = UserRoutes(controllers.users, response_builder, logger)
+        self._users = UserRoutes(controllers.user, response_builder, logger)
 
     def mount(self, app: Flask):
         app.register_error_handler(STATUS_NOT_FOUND, self.respond_not_found)

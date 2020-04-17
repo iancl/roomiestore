@@ -1,4 +1,4 @@
-from .users import UserRoutes
+from .user import UserRoutes
 from .base import RouterBase
 from .api import API
 
