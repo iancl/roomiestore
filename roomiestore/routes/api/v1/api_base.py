@@ -1,12 +1,13 @@
 from roomiestore.config.constants import STATUS_SUCCESS, STATUS_NOT_FOUND, STATUS_ERROR, STATUS_BAD_REQUEST, \
     MIME_JSON, MIME_TEXT
-
+from roomiestore.routes.base import RouterBase
 from flask import Response
 import json
 
 
 # this may look unnecessary but it's a way to centralize all the response generation to 1 place
-class RouterBase:
+# RouterBase abstract methods will be overridden by children classes
+class APIBase(RouterBase):
     '''
     Adds methods to respond requests to child classes
     '''

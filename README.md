@@ -17,3 +17,11 @@ An app where roommates can sell beverages to other roommates
 - implement jwt token auth
 - update/add unit tests
 - add relevant logs
+
+# Notes
+- This project is meant to be run in linux envs
+- This project uses bcrypt to hash passwords. Install these deps with
+    - build-essential
+    - libffi-dev
+    - python-dev
+    - Debian example: sudo apt-get install build-essential libffi-dev python-dev

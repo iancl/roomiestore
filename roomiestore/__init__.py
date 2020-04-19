@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -12,7 +13,8 @@ from sqlalchemy.exc import IntegrityError
 class Application:
     def __init__(self, config):
         self._config = config
-        self._server = Flask(__name__)
+        self._server = Flask(__name__, template_folder='templates')
+        self._bootstrap = Bootstrap(self._server)
         self._logger = self._server.logger
         self._db = DB(config['db'], self._logger)
         self._response_builder = ResponseBuilder()
@@ -24,8 +26,8 @@ class Application:
 
         # test
         import datetime
-        from .models import User
-        try:
+        # from .models import User
+        # try:
             # self._controllers.user().add(
             #     fname='ian',
             #     lname='calderon',
@@ -36,10 +38,10 @@ class Application:
             #     passwd='123',
             #     role_id=1)
 
-            r = self._db.query(User).filter_by(role_id=1).all()
-            self._logger.error(r)
-        except Exception as e:
-            self._logger.error('===================>', e)
+        #     r = self._db.query(User).filter_by(role_id=1).all()
+        #     self._logger.error(r)
+        # except Exception as e:
+        #     self._logger.error('===================>', e)
 
 
     def setup_logging(self):

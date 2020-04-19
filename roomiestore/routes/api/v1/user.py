@@ -1,9 +1,10 @@
-from .base import RouterBase
+from .api_base import APIBase
+
 # for typing purposes
 from roomiestore.controllers.user import UserController
 
 
-class UserRoutes(RouterBase):
+class UserRoutes(APIBase):
     def __init__(self, controller, response_builder, logger):
         super().__init__(response_builder, logger)
         self._controller: UserController = controller

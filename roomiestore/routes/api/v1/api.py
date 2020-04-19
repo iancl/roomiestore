@@ -1,10 +1,10 @@
 from . import UserRoutes
-from . import RouterBase
+from . import APIBase
 from roomiestore.config.constants import STATUS_NOT_FOUND, STATUS_ERROR
 from flask import Flask
 
 
-class API(RouterBase):
+class API(APIBase):
     def __init__(self, controllers, response_builder, logger):
         super().__init__(response_builder, logger)
         self._controllers = controllers

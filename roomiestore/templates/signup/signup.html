@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+{% block content %}
+{#  REDO THIS IN FORMS THAT HIT THE API ENDPOINT DIRECTLY. IT"S MUCH EASIER  #}
+    <div class="container">
+        <h1>Please signup</h1>
+        <br />
+        <form id="signup_form" method="post">
+            <label>first name: </label>
+            <input type="text" required placeholder="first name" id="fname" value="jonh">
+            <br />
+            <label>last name: </label>
+            <input type="text" required placeholder="last name" id="lname" value="smith">
+            <br />
+            <label>date of birth: </label>
+            <input type="text" required placeholder="last name" id="dob" value="19-12-1999">
+            <br />
+            <label>username: </label>
+            <input type="text" required placeholder="username" id="username" value="jsmith">
+            <br />
+            <label>email: </label>
+            <input type="email" required placeholder="email" id="email" value="jsmith@email.com">
+            <br />
+            <label>password: </label>
+            <input type="password" required placeholder="password" id="password" value="123">
+            <br />
+            <input class="btn btn-default" id="submit" type="submit" value="Create account">
+        </form>
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+    </div>
+{% endblock %}
