@@ -1,5 +1,8 @@
 # Roomiestore
 
+# NOTE:
+- project is not complete yet but I am setting phase-2 the branch as default so I can shocase my progress
+
 An app where roommates can sell beverages to other roommates
 
 # phase 1 (completed)
